@@ -81,6 +81,7 @@ def fetch_url(url, is_redirect=False, is_referenced=False):
         return url, f"{status_code} {status_message}"
 
     except socket.gaierror:
+        print(f'\nURL: {url}\nStatus: Network Error')
         return url, "Network Error"
     except Exception as e:
         return url, f"Error: {e}"
